@@ -10,6 +10,12 @@ import { AuthService } from './_services/auth.service';
 import{ErrorInterceptorProvider} from './_services/error.interceptor';
 import { AlertifyService } from './_services/alertify.service';
 import { BsDropdownModule } from 'ngx-bootstrap';
+import { MemberListDirective } from './member-list.directive';
+import { MemberListComponent } from './member-list/member-list.component';
+import { ListsComponent } from './lists/lists.component';
+import { MessagesComponent } from './messages/messages.component';
+import { RouterModule } from '@angular/router';
+import { appRoutes } from './routes';
 
 @NgModule({
   declarations: [
@@ -19,12 +25,19 @@ import { BsDropdownModule } from 'ngx-bootstrap';
 ,
     HomeComponent,
     RegisterComponent
+,
+    MemberListDirective,
+    MemberListDirective,
+    MemberListComponent,
+    ListsComponent,
+    MessagesComponent
 ],
   imports: [
     BrowserModule,
     HttpClientModule, 
     FormsModule,
-    BsDropdownModule.forRoot()
+    BsDropdownModule.forRoot(),
+    RouterModule.forRoot(appRoutes)
   ],
   providers: [
       AuthService,
