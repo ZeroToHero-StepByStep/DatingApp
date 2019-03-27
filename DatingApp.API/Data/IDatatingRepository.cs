@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace DatingApp.API.Data
 {
-    interface IDatatingRepository
+    public interface IDatatingRepository
     {
         void Add<T>(T entity) where T : class;
         void Delete<T>(T entity) where T : class;
         Task<bool> SaveAll();
         Task<IEnumerable<User>> GetUsers();
-        Task<User> GetUser();
+        Task<User> GetUser(int id);
     }
 }
