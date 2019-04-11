@@ -26,6 +26,7 @@ import { MemberListResolver } from './_resolver/member-list.resolver';
 import {MemberEditResolver} from './_resolver/member-edit.resolver';
 import {NgxGalleryModule} from 'ngx-gallery';
 import { MemberEditComponent } from './members/member-edit/member-edit.component';
+import { PreventUnsavedChanges } from './_guards/prevent-unsaved-changes.guard';
 
 export function tokenGetter(){
     return localStorage.getItem('token');
@@ -74,7 +75,8 @@ export function tokenGetter(){
       UserService,
       MemberDetailResolver,
       MemberListResolver,
-      MemberEditResolver
+      MemberEditResolver,
+      PreventUnsavedChanges
 ],
   bootstrap: [AppComponent]
 })
