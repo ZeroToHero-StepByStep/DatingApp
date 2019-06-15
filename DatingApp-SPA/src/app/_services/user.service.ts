@@ -26,7 +26,7 @@ getUsers(page?, itemsPerPage?): Observable<PaginationResult<User[]>>{
     response =>{
       paginationResult.result = response.body;
       if(response.headers.get('Pagination') != null){
-        paginationResult.pagination = JSON.parse(response.headers.get('Pagination'))
+        paginationResult.pagination = JSON.parse(response.headers.get('Pagination'));
       }
       return paginationResult;
     }
